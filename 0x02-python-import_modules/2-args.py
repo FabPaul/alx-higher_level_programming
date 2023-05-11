@@ -19,4 +19,4 @@ for i in range(number):
 
     entry = sys.argv[i + 1]
 
-    print('{}: {}' .format(i, entry))
+    print('{}: {}' .format(i + 1, entry))
