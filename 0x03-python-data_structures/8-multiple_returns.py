@@ -8,5 +8,4 @@ def multiple_returns(sentence):
     if a == 0:
         initial_value = None
 
-    else:
-        return (a, initial_value)
+    return (a, initial_value)
