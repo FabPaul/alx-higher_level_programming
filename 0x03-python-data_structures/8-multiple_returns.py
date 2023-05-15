@@ -6,7 +6,7 @@ def multiple_returns(sentence):
     initial_value = sentence[0]
 
     if a == 0:
-        return 'None'
+        initial_value = None
 
     else:
         return (a, initial_value)
