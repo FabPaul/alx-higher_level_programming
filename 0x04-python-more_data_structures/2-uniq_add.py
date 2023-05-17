@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def uniq_add(my_list=[]):
-
+    '''
     uniq_num = set()
     sum_total = 0
 
@@ -10,4 +10,8 @@ def uniq_add(my_list=[]):
             sum_total = i
             uniq_num.add(i)
 
-    return sum_total
+    return sum_total '''
+
+    new_list = sum(set(my_list))
+
+    return new_list
