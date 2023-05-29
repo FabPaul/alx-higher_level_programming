@@ -11,7 +11,7 @@ def list_division(my_list_1, my_list_2, list_length):
             division = elem1 / elem2
 
         except TypeError:
-            print('Wrong type')
+            print('wrong type')
             division = 0
 
         except ZeroDivisionError:
