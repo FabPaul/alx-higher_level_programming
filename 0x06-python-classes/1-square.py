@@ -9,4 +9,4 @@ class Square:
         """ Definition of the init method which contains a private instant
         called size which represents the size of the square"""
 
-        self.size = size
+        self.__size = size
