@@ -1,6 +1,7 @@
 #!usr/bin/python3
 """ A module that prevents users from dynamically creating new instances """
 
+
 class LockedClass:
     """ Iitializing the class """
 
