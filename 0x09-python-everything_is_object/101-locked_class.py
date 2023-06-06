@@ -3,7 +3,8 @@
 
 
 class LockedClass:
-    """ Iitializing the class """
-
-    """ __slots__ is the stopper """
-    __slots__ = ['first_name']
+    """
+    Initializing the class that only lets instanced called
+    first_name to be created
+     """
+    __slots__ = ["first_name"]
