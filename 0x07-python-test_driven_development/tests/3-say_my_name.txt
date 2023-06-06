@@ -1,0 +1,58 @@
+Test cases for module 3-say_my_name.py
+
+
+This module has 1 function say_my_name(first_name, last_name="")
+
+Usage
+
+------------------------------------------
+
+Importing the function
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Passing 2 strings to the function
+
+>>> say_my_name('Paul', 'Fopa')
+My name is Paul Fopa
+
+
+Passing a string and an integer raisesa TypeError as well.
+
+>>> say_my_name('Paul', 6)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+
+Passing a list and a string raises a TypeError.
+
+>>> say_my_name(['Paul'], 'Fopa')
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+
+Passing a float and a string raises a TypeError.
+
+>>> say_my_name(2.6, 'Paul')
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+
+Passing an empty function raises a TypeError.
+
+>>> say_my_name()
+Traceback (most recent call last):
+	...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+Passing None raises a TypeError.
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string

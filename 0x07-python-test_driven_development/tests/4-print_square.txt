@@ -1,0 +1,73 @@
+Tests for 4-print_square.py
+
+The function print_square is defined in this module
+
+Usage
+------------------------
+
+Importing the function
+
+>>> print_square = __import__('4-print_square').print_square
+
+Printing 0 returns nothing.
+>>> print_square(0)
+
+
+Printing 1 returns a single hastag
+>>> print_square(1)
+#
+
+printing 3 returns a square of 3 rows and 3 columns
+>>> print_square(3)
+###
+###
+###
+
+
+Printing -3 returns a ValueError, of course
+>>> print_square(-3)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+
+Printing floating point returns TypeError
+>>> print_square(3.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+Same for negative floating points
+>>> print_square(-3.5)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+Printing None also raise a TypeError
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+Printing an empty list definitely raises a TypeError
+>>> print_square([])
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+Printing a String raises TypeError
+>>> print_square('two')
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+
+Passing nothing to the function raises a TypeError
+>>> print_square()
+Traceback (most recent call last):
+	...
+TypeError: print_square() missing 1 required positional argument: 'size'

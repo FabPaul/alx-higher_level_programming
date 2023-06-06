@@ -1,0 +1,74 @@
+Tests for the 5-text_indentatio.py module
+
+The function text_indentation(text) is defined in this module
+
+usage
+--------------------------
+
+Importing the function
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+passing an empty string
+>>> text_indentation('')
+
+Passsing a string without any special character
+>>> text_indentation('Hello world!')
+Hello world!
+
+Passing a string with a character that requires the printing of a new line
+>>> text_indentation('Hello world.')
+Hello world.
+<BLANKLINE>
+
+Passing a longer string with beginning wide space
+>>> text_indentation('   My name is Paul, and I am a software engineer in the making.')
+My name is Paul, and I am a software engineer in the making.
+<BLANKLINE>
+
+
+Passing a string with wide spaces at the end
+>>> text_indentation('My name is Paul, and I am a software engineer in the making. How about you?   ')
+My name is Paul, and I am a software engineer in the making.
+<BLANKLINE>
+ How about you?
+<BLANKLINE>
+
+
+Passing nothing returns a TypeError
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+Passing a string with brackets
+>>> text_indentation('[Jesus]')
+[Jesus]
+
+
+Passing a List returned a TypeError
+>>> text_indentation(['Jesus'])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+Passing a positive integer retrned a TypeError
+>>> text_indentation(0)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+Passing None returns TypeError
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+Passing a float returns TypeError
+>>> text_indentation(-3.5)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
