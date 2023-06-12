@@ -1,0 +1,57 @@
+Tests for 7-base_geometry.py
+
+Usage:
+
+--------------------------
+
+
+Importing the function
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Assigning the function to the value a
+>>> a = BaseGeometry()
+
+
+passing an empty area
+>>> a.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
+
+
+Passing the integer 3
+
+>>> a.integer_validator('integer', 3)
+
+Passing integer 0
+>>> a.integer_validator('integer', 0)
+Traceback (most recent call last):
+	...
+ValueError: integer must be greater than 0
+
+passing string
+>>> a.integer_validator('string', 'cool')
+Traceback (most recent call last):
+	...
+TypeError: string must be an integer
+
+Passing floating point
+>>> a.integer_validator('float', 4.2)
+Traceback (most recent call last):
+	...
+TypeError: float must be an integer
+
+Passing a list
+>>> a.integer_validator('list', [1, 2, 3, 4])
+Traceback (most recent call last):
+	...
+TypeError: list must be an integer
+
+passing integer without a value
+>>> a.integer_validator('integer')
+Traceback (most recent call last):
+	...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>>
