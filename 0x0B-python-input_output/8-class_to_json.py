@@ -9,4 +9,4 @@
 def class_to_json(obj):
     """ Function that returns dict representaion for json serialization """
 
-    return 0bj.__dict__
+    return obj.__dict__
