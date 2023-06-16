@@ -6,7 +6,7 @@
 def append_after(filename="", search_string="", new_string=""):
     """ Functiont that new line to a text file afyer certain string """
 
-    with open(filename) as f:
+    with open(filename, mode='r') as f:
         """ Open the file in read mode and read the content """
 
         line = f.readlines()
@@ -19,4 +19,4 @@ def append_after(filename="", search_string="", new_string=""):
 
             """Write the new line after the line with the search string """
             if search_string in i:
-                f.write(new_string + '\n')
+                f.write(new_string)
