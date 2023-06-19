@@ -3,6 +3,8 @@
 """ Module of a function that defines the Base Class. """
 
 import json
+import csv
+import os
 
 
 class Base:
@@ -88,3 +90,31 @@ class Base:
         except FileNotFoundError:
             return []
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes list_objs to CSV and saves to a file """
+
+        filename = cls.__name__ + '.csv'
+        with open(filename, mode='w', newline='') as f:
+            writer = csv.writer(f)
+
+            if list_objs is not None:
+                for objs in list_objs:
+                    writer.writerow(objs.to_csv_row())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserializ instances from CSV and returns lists of instances """
+
+        filename = cls.__name__ + '.csv'
+        try:
+            with open(filename, newline='') as f:
+                reader = csv.reader(file)
+
+                instance = []
+                for row in reader:
+                    single_instance = cls.create(*row)
+                    instance.append(single_instance)
+                return instance
+        except FileNotFoundError:
+            return []
