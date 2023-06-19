@@ -124,7 +124,7 @@ class Base:
 
         window = turtle.Screen()
         window.title("Drawing Rectangles and Squares")
-        window.bgcolor("orange")
+        window.bgcolor("green")
 
         pen = turtle.Turtle()
         pen.speed(0)
@@ -134,3 +134,29 @@ class Base:
             pen.goto(rect.x, rect.y)
             pen.pendown()
             pen.color("red")
+            pen.forward(rect.width)
+            pen.right(90)
+            pen.forward(rect.height)
+            pen.right(90)
+            pen.forward(rect.width)
+            pen.right(90)
+            pen.forward(rect.height)
+            pen.right(90)
+            pen.penup()
+
+        for square in list_squares:
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            pen.color("yellow")
+            pen.forward(square.size)
+            pen.right(90)
+            pen.forward(square.size)
+            pen.right(90)
+            pen.forward(square.size)
+            pen.right(90)
+            pen.forward(square.size)
+            pen.right(90)
+            pen.penup()
+
+        pen.hideturtle()
+        turtle.done()
