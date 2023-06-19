@@ -4,13 +4,12 @@
 
 import json
 import csv
-
+import turtle
 
 class Base:
     """ The base class function """
 
     __nb_objects = 0
-
 
     def __init__(self, id=None):
         """Function that initializes a new instance of the base class """
@@ -117,3 +116,20 @@ class Base:
                 return instance
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window & draw all the Rects and Sqrs using Turtle graphic"""
+
+        window = turtle.Screen()
+        window.title("Drawing Rectangles and Squares")
+        window.bgcolor("orange")
+
+        pen = turtle.Turtle()
+        pen.speed(0)
+        pen.penup()
+
+        for rect in list_rectangles:
+            pen.goto(rect.x, rect.y)
+            pen.pendown()
+            pen.color("red")
