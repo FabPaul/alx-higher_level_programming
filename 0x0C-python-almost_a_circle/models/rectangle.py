@@ -133,3 +133,10 @@ class Rectangle(Base):
         if len(args) == 0 or len(kwargs) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Function that returns the dictionary representation of Square"""
+
+        dictionary = {'id': self.id, 'width': self.width,
+                      'height': self.height, 'x': self.x, 'y': self.y}
+        return dictionary
