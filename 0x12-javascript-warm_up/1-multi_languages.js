@@ -2,7 +2,7 @@
 
 const firstLine = 'C is fun';
 let secondLine = 'Python is cool';
-var thirdLine = 'JavaScript is amazing';
+let thirdLine = 'JavaScript is amazing';
 
 console.log(firstLine);
 console.log(secondLine);
