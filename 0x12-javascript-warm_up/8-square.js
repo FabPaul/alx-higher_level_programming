@@ -7,7 +7,7 @@ if (!isNaN(square)) {
   for (let i = 0; i < square; i++) {
     let line = '';
     for (let j = 0; j < square; j++) {
-      line += 'x';
+      line += 'X';
     }
     console.log(line);
   }
