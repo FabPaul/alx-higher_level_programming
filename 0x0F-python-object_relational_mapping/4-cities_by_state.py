@@ -17,8 +17,9 @@ if __name__ == '__main__':
 
     results = db_cursor.fetchall()
 
-    for result in results:
-        print(result)
+    if results is not None:
+        for result in results:
+            print(result)
 
     db_cursor.close()
     db.close()
