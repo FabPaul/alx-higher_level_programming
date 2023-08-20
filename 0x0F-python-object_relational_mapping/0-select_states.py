@@ -3,24 +3,20 @@
 "Python script that lists all states from the db hbtn_0e_0usa"
 
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 
-    mysqwl_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-
-    db = MySQL.connect(host="localhost", port=3306, /
-                       user=mysql_username, passwd=mysql_password, db=db_name)
+    db = MySQLdb.connect(
+            host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3])
 
     db_cursor = db.cursor()
     db_cursor.execute("SELECT * FROM states")
 
-    staes = bd_cursor.fetchall()
+    states = db_cursor.fetchall()
 
     for state in states:
-        print(states)
+        print(state)
 
     db_cursor.close()
     db.close()
