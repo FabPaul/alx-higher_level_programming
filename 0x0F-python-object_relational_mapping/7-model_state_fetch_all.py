@@ -4,7 +4,7 @@
 
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import crate_engine
+from sqlalchemy import create_engine
 from sys import argv
 
 if __name__ == '__main__':
@@ -19,13 +19,13 @@ if __name__ == '__main__':
     db_string = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(db_string.format(username, password, database))
 
-    Session = sesionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
     session = Session()
 
-    states = session.query.order_by(States.id).all()
+    states = session.query(State).order_by(State.id).all()
 
     for state in states:
-        print("{}: {}".format(state.id, states.name))
+        print("{}: {}".format(state.id, state.name))
 
     session.close()
