@@ -23,10 +23,11 @@ if __name__ == '__main__':
 
     session = Session()
 
-    state_name = argv[4]
     states = session.query(State).filter(State.name.contains('a'))
 
     for state in states:
         session.delete(state)
+
+    session.commit()
 
     session.close()
