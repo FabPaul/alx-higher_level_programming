@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     try:
         response = req.json()
-        if not response:
+        if response == {}:
             print("No result")
         else:
             print("[{}] {}".format(response.get("id"), reponse.get("name")))
